@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="resume">
+        <p>Lorem ipsum...</p>
+        <button onclick="show()">Plus</button>
+    </div>
+    <p class="desc" style="display: none;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi natus dolorum sunt exercitationem, rerum quae
+        deleniti excepturi impedit quo, molestias ea. Incidunt, adipisci consectetur. Corrupti esse eligendi distinctio
+        tenetur libero!
+    </p>
+    <script>
+        const RESUME = document.querySelector(".resume")
+        const DESC = document.querySelector(".desc")
+        function show() {
+            DESC.style.display = "block"
+            RESUME.style.display = "none"
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="ground">
+        <input type="radio" name="strat" id="s4231" checked>
+        <label for="s4231">4-2-3-1</label>
+
+        <input type="radio" name="strat" id="s442">
+        <label for="s442">4-4-2</label>
+
+        <div class="player"><div class="player_pos"></div></div>
+        <div class="player"><div class="player_pos"></div></div>
+        <div class="player"><div class="player_pos"></div></div>
+        <div class="player"><div class="player_pos"></div></div>
+        <div class="player"><div class="player_pos"></div></div>
+
+        <div class="player"><div class="player_pos"></div></div>
+        <div class="player"><div class="player_pos"></div></div>
+        <div class="player"><div class="player_pos"></div></div>
+        <div class="player"><div class="player_pos"></div></div>
+        <div class="player"><div class="player_pos"></div></div>
+
+        <div class="player"><div class="player_pos"></div></div>
+
+    </div>
+    <div class="ball"></div>
+    <script>
+        const ball = document.querySelector(".ball")
+        const PLAYERS = document.querySelectorAll(".player_pos")
+        PLAYERS.forEach((player)=> {
+            player.addEventListener("click", function(e) {
+                ball.style.top = e.clientY + "px"
+                ball.style.left = e.clientX + "px"
+            })
+        })
+    </script>
+</body>
+
+</html>

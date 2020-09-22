@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const bd = new Date("May 22, 2021")
+        const td = new Date(Date.now())
+        let days = bd - td
+        days = Math.floor(days / 86400000)
+        console.log(days)
+
+        document.open()
+        document.write("<div>Nous somme le " + td + "</div>")
+        document.write("<div>Votre anniversaire aura lieu le " + bd + "</div>")
+        document.write("<div style=\"padding:30px 0;font-weight:bold;\">Il reste " + days + " jours avant votre anniversaire</div>")
+        document.close()
+
+    </script>
+</body>
+</html>

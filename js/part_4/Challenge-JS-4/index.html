@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Challenge JS</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+    <style>
+        .content {
+            display: flex;
+            justify-content: space-between;
+        }
+        input, select {
+            font-size: 1rem;
+            padding: .5em 1em;
+            width: 30%;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="text-center bg-primary text-white pb-1">
+            <h1>Challenge 4 JAVASCRIPT/jQuery</h1>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center mb-3">
+                <h2>Calculatrice</h2>
+            </div>
+            <!-- Votre code ici -->
+            <div class="content">
+                <input id="nbr1" type="text">
+                <select name="op" id="op">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="*">*</option>
+                </select>
+                <input id="nbr2" type="text">
+            </div>
+            <button class="btn btn-primary my-3 w-100">Resultat</button>
+            <h2 id="result" class="text-center text-success"></h2>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+
+    </body>
+</html>

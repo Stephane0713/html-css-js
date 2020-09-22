@@ -1,0 +1,18 @@
+/*Utiliser les pseudo classes ":hover" ":visited" ":active" dans l'ordre convenable afin de définir l'apparence des liens comme suit :
+* Les liens survolés: non soulignés avec un background  "#7E3661" et une couleur de texte blanche.
+* Les liens visités : avec une couleur de texte égale à "#FCB941"
+* Les liens (état cliqué) : avec une taille de 1.5em.*/
+
+a:hover {
+    text-decoration: none;
+    background-color: #7e3661;
+    color: #fff;
+}
+
+a:visited {
+    color: #fcb941;
+}
+
+a:active {
+    font-size: 1.5em;
+}

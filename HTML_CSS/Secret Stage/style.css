@@ -1,0 +1,87 @@
+@keyframes sleepy {
+    0% {
+        background-position-x: 0;
+    }
+
+    80% {
+        background-position-x: -120px;
+    }
+
+    90% {
+        background-position-x: -240px;
+    }
+}
+
+@keyframes hit {
+    0% {
+        background-position-x: 0;
+    }
+    90% {
+        background-position-x: -238px;
+    }
+    95% {
+        background-position-x: -242px;
+    }
+}
+
+@keyframes move {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1080px;
+    }
+}
+
+body {
+    text-align: center;
+}
+
+.anim {
+    width: 120px;
+    height: 130px;
+    background-image: url("link.png");
+    background-position-x: 0;
+    margin: 20px auto;
+}
+
+#sleepy-front:checked ~ .anim{
+    animation: sleepy 1s infinite alternate;
+    background-position-y: 0;
+    animation-timing-function: steps(1);
+}
+
+#sleepy-left:checked ~ .anim{
+    animation: sleepy 1s steps(1) infinite alternate;
+    background-position-y: -130px;
+}
+
+#hit-right:checked ~ .anim{
+    animation: hit 1s steps(1) infinite alternate;
+    background-position-y: -390px;
+}
+
+#walk-front:checked ~ .anim{
+    animation: move 1s steps(9) infinite;
+    background-position-y: -520px;
+}
+
+#walk-left:checked ~ .anim{
+    animation: move 1s steps(9) infinite;
+    background-position-y: -650px;
+}
+
+#walk-back:checked ~ .anim{
+    animation: move 1s steps(9) infinite;
+    background-position-y: -780px;
+}
+
+#walk-right:checked ~ .anim{
+    animation: move 1s steps(9) infinite;
+    background-position-y: -910px;
+}
+
+#run-right:checked ~ .anim{
+    animation: move .6s steps(9) infinite;
+    background-position-y: -910px;
+}

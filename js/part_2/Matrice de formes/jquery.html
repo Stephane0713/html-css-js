@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template: repeat(5, 6rem) / repeat(5, 6rem);
+            grid-gap: 3rem;
+            margin: 3rem;
+        }
+
+        .form {
+            height: 5rem;
+            width: 5rem;
+            border: 1px solid brown;
+        }
+
+        .cercle {
+            border-radius: 50%;
+        }
+
+        .losange {
+            transform: rotateZ(45deg);
+        }
+
+        .full {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="form carre"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+
+        <div class="form cercle"></div>
+        <div class="form carre"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form losange"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form carre"></div>
+        <div class="form cercle"></div>
+
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form carre"></div>
+    </div>
+
+    <button id="full">Remplir</button>
+    <button id="empty">Vider</button>
+
+    <script src="../../jquery.min.js"></script>
+
+    <script>
+
+        const GRID = $(".form")
+
+        $("#full").click(() => {
+            GRID.addClass("full")
+        })
+
+        $("#empty").click(() => {
+            GRID.removeClass("full")
+        })
+
+        $(".cercle").click(() => {
+            $(event.target).toggleClass("full")
+        })
+
+        let x = 0
+        let y = 0
+
+        GRID.each(function () {
+            $(this).prop("pos", [x, y])
+            x++
+            if (x >= 5) {
+                x = 0
+                y++
+            }
+        })
+
+        $(".carre").click(function () {
+            let y = $(this).prop("pos")[1]
+            let state = $(this).hasClass("full")
+            GRID.each(function () {
+                if (y == $(this).prop("pos")[1]) {
+                    if (state) {
+                        $(this).removeClass("full")
+                    } else {
+                        $(this).addClass("full")
+                    }
+                }
+            })
+        })
+
+        $(".losange").click(function () {
+            let x = $(this).prop("pos")[0]
+            let y = $(this).prop("pos")[1]
+            let state = $(this).hasClass("full")
+            GRID.each(function () {
+                if (y == $(this).prop("pos")[1] || x == $(this).prop("pos")[0]) {
+                    if (state) {
+                        $(this).removeClass("full")
+                    } else {
+                        $(this).addClass("full")
+                    }
+                }
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

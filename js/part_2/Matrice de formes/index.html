@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template: repeat(5, 6rem) / repeat(5, 6rem);
+            grid-gap: 3rem;
+            margin: 3rem;
+        }
+
+        .form {
+            height: 5rem;
+            width: 5rem;
+            border: 1px solid brown;
+        }
+
+        .cercle {
+            border-radius: 50%;
+        }
+
+        .losange {
+            transform: rotateZ(45deg);
+        }
+
+        .full {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="form carre"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+
+        <div class="form cercle"></div>
+        <div class="form carre"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form losange"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form carre"></div>
+        <div class="form cercle"></div>
+
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form cercle"></div>
+        <div class="form carre"></div>
+    </div>
+
+    <button id="full">Remplir</button>
+    <button id="empty">Vider</button>
+    <script>
+        const GRID = document.querySelectorAll(".form")
+        const FULL = document.querySelector("#full")
+        const EMPTY = document.querySelector("#empty")
+
+        //Applique la classe full aux éléments
+        FULL.addEventListener("click", () => {
+            for (elt of GRID) {
+                elt.classList.add("full")
+            }
+        })
+
+        //Retire la classe full aux éléments
+        EMPTY.addEventListener("click", () => {
+            for (elt of GRID) {
+                elt.classList.remove("full")
+            }
+        })
+
+        //Elements ronds
+        GRID.forEach((elt) => {
+            if (elt.classList.contains("cercle")) {
+                elt.addEventListener("click", () => {
+                    elt.classList.toggle("full")
+                })
+            }
+        })
+
+
+        //Defini la position des éléments dans la grille
+        function toGrid(arr, col) {
+            let x = 0
+            let y = 0
+
+            for (elt of arr) {
+                elt.pos = [x, y]
+                x++
+                if (x >= col) {
+                    x = 0
+                    y++
+                }
+            }
+        }
+        toGrid(GRID, 5)
+
+        //Elements carrés
+        GRID.forEach((elt) => {
+            if (elt.classList.contains("carre")) {
+                elt.addEventListener("click", () => {
+                    let y = elt.pos[1]
+                    let state = elt.classList.contains("full")
+                    GRID.forEach((elt) => {
+                        if (elt.pos[1] == y) {
+                            if (state) {
+                                elt.classList.remove("full")
+                            } else {
+                                elt.classList.add("full")
+                            }
+                        }
+                    })
+                })
+            }
+        })
+
+        //Elements losange
+        GRID.forEach((elt) => {
+            if (elt.classList.contains("losange")) {
+                elt.addEventListener("click", () => {
+                    let x = elt.pos[0]
+                    let y = elt.pos[1]
+                    let state = elt.classList.contains("full")
+                    GRID.forEach((elt) => {
+                        if (elt.pos[1] == y || elt.pos[0] == x) {
+                            if (state) {
+                                elt.classList.remove("full")
+                            } else {
+                                elt.classList.add("full")
+                            }
+                        }
+                    })
+                })
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Exercice 2</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#bloc1 {
+			width: 500px;
+			height: 400px;
+			background-color: lightblue;
+		}
+
+		#paragraphe1 {
+			color: green;
+		}
+
+		#paragraphe2 {
+			color: red;
+		}
+	</style>
+
+	<script type="text/javascript">
+
+		/** A COMPLETER */
+		addEventListener("load", () => {
+			const BTN1 = document.querySelector("button")
+			const BLOC1 = document.querySelector("#bloc1")
+			BTN1.addEventListener("click", () => {
+				BLOC1.style.background = "yellow"
+			})
+
+			let btn2On = false
+			const BTN2 = document.querySelector("button:nth-of-type(2)")
+			const PARA = document.querySelectorAll("p")
+			BTN2.addEventListener("click", () => {
+				PARA.forEach((p) => {
+					p.style.color = "black"
+					btn2On = true
+				})
+			})
+			PARA.forEach((p) => {
+				p.addEventListener("mouseover", () => {
+					p.style.color = "white"
+				})
+				p.addEventListener("mouseout", () => {
+					if (btn2On) {
+						p.style.color = "black"
+					} else { 
+						p.style.color = null
+					}
+				})
+			})
+		})
+
+	</script>
+</head>
+
+<body>
+	<div id="bloc1">
+		<p id="paragraphe1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+
+		<p id="paragraphe2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
+	<button>Modifier fond</button>
+	<button>Modifier texte</button>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+/* body * {
+    outline: 1px solid black;
+} */
+
+.manette {
+    width: 50rem;
+    height: 20rem;
+    background-color: #e3e3e3;
+    border: 3px solid #b9b9b9;
+    border-radius: 10px;
+}
+
+.cable {
+    width: 2.5rem;
+    height: 1rem;
+    margin-left: 20%;
+    border: 3px solid #868686;
+    border-left-color: #adadad;
+    border-top: none;
+    background: #b9b9b9;
+}

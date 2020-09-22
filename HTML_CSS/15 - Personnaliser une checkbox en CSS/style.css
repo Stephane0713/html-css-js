@@ -1,0 +1,63 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    background-color: rgba(255, 0, 0, .8);
+    transition: background-color .4s ease-in-out;
+    border-radius: 1em;
+    height: 2rem;
+    width: 5rem;
+}
+
+.switch_box {
+    display: none;
+}
+
+.switch_text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 900;
+    padding: 0 .2em;
+    transition: opacity .4s ease-in-out;
+}
+
+#oui.switch_text {
+    opacity: 0;
+    left: .2em;
+}
+
+#non.switch_text {
+    right: .2em;
+}
+
+.switch_btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.4);
+    transition: left .4s ease-in-out;
+}
+
+/*La checkbox est cochée*/
+
+.switch_box:checked + .switch {
+    background-color: rgba(0, 128, 0, .6);
+}
+
+.switch_box:checked + .switch .switch_btn {
+    left: calc(100% - 2em);
+}
+
+.switch_box:checked + .switch #non.switch_text {
+    opacity: 0;
+}
+
+.switch_box:checked + .switch #oui.switch_text {
+    opacity: 1;
+}

@@ -1,0 +1,68 @@
+/*Exercice 2:
+On considère le tableau html dont le code est fourni dans le fichier tableau.html et dont le résultat est présenté dans tableau.png.
+
+Travail à faire :
+1) Changer la taille du titre à "1.5em" en affichant la première lettre de chaque mot en capitale.
+2) Enlever la bordure pour le tableau.
+3) Ajouter une marge interne de 10px et un alignement centré pour tous les cellules "th et td".
+4) Cibler  la deuxième balise "th" de la première "tr" qui contient le mois du planning pour lui changer la taille en "2em" 
+et la couleur en bleu.
+5) Mettre en  background "#FCB941"  tous lignes "tr" du tbody qui viennent en positions paires et en background "#F1654C" les 
+lignes qui viennent en positions impaires (Utiliser le pseudo classe "nth-child").
+6) Donner à la première cellule de chaque ligne en position impaire ,un background "#7E3661" et une couleur "#fff".(Utiliser 
+les pseudo classes nth-child et first-child)
+7) Donner à la première cellule de chaque ligne en position paire ,un background "#888888" et une couleur "#fff".(Utiliser les 
+pseudo classes nth-child et first-child)
+8) Donner à la dernière cellule de chaque ligne en position impaire ,un background "#8870FF" et une couleur "#fff".(Utiliser 
+les pseudo classes nth-child et last-child)
+9) Enlever la bordure droite et la bordure du haut, de la dernière cellule "th" qui possède un attribut "rowspan" (utiliser 
+le pseudo classe "last-child' et un sélecteur d'attribut pour "rowspan".*/
+
+caption {
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+
+table {
+    border: none;
+} 
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(1) th:nth-child(2) {
+    font-size: 2em;
+    color: blue;
+    border-color: #888888;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #FCB941;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #F1654C;
+}
+
+td:first-child {
+    color: #fff;
+}
+
+tr:nth-child(even) td:first-child {
+    background-color: #888888;
+}
+
+tr:nth-child(odd) td:first-child {
+    background-color: #7E3661;
+}
+
+tr:nth-child(odd) td:last-child {
+    background-color: #8870FF;
+}
+
+th[rowspan]:last-child {
+    border-top: none;
+    border-right: none;
+}

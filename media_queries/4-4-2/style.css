@@ -1,0 +1,102 @@
+*, *:before {
+    box-sizing: border-box;
+}
+
+.ground {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-end;
+    max-width: 800px;
+    height: 800px;
+    margin: 5em auto 0;
+    background: url("./img/football-ground.jpg") no-repeat center center;
+    background-size: 100% 100%;
+}
+
+input {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -2em;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+label:last-of-type {
+    left: 5em;
+}
+
+input:checked + label {
+    border: 1px solid blue;
+}
+
+.player {
+    min-width: 20%;
+    margin: 50px 0;
+}
+
+.player_pos {
+    background: url("./img/footballjersey2_113020.png") no-repeat center center;
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+    margin: auto;
+}
+
+.ball {
+    background: url("./img/footbal_icon-icons.com_53569.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transition: all .2s ease-in-out;
+}
+
+/*Formation 4231*/
+#s4231:checked ~ .player:nth-of-type(1) {
+    width: 100%;
+}
+
+#s4231:checked ~ .player:nth-of-type(2),
+#s4231:checked ~ .player:nth-of-type(3),
+#s4231:checked ~ .player:nth-of-type(4) {
+    width: 33.33%;
+}
+
+#s4231:checked ~ .player:nth-of-type(5),
+#s4231:checked ~ .player:nth-of-type(6) {
+    width: 50%;
+}
+
+#s4231:checked ~ .player:nth-of-type(7),
+#s4231:checked ~ .player:nth-of-type(8),
+#s4231:checked ~ .player:nth-of-type(9),
+#s4231:checked ~ .player:nth-of-type(10) {
+    width: 25%;
+}
+
+#s4231:checked ~ .player:nth-of-type(11) {
+    width: 100%;
+}
+
+/*Formation 442*/
+
+#s442:checked ~ .player {
+    width: 25%;
+}
+
+#s442:checked ~ .player:nth-of-type(1),
+#s442:checked ~ .player:nth-of-type(2) {
+    width: 50%;
+}
+
+#s442:checked ~ .player:nth-of-type(11) {
+    width: 100%;
+}
+

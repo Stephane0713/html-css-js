@@ -1,0 +1,21 @@
+/*Ne pas toucher cette section*/
+.ascenceur {
+    height: 100px;
+    width: 100px;
+    border: 2px solid #000;
+    transition: transform .2s ease-in-out;
+}
+body {
+    position: relative;
+}
+.bouton {
+    position: absolute;
+    top: 60px;
+    left: 120px;
+}
+.bouton:nth-child(2) {
+    top: 200px;
+}
+
+/*Déplacer l'ascenceur devant le bouton coché*/
+/*Votre code en dessous !*/

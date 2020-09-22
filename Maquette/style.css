@@ -1,0 +1,172 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+/*Variables*/
+    --color-dark: #222F3E;
+    --color-light: #fff;
+    --color-bg-input: #576574;
+    --color-important: #FF9F43;
+    --color-gradient-1: #5F27CD;
+    --color-gradient-2: #365EBB;
+    --color-gradient-3: rgba(1, 163, 164, .1);
+
+    margin: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(180deg, var(--color-gradient-1) 20%, var(--color-gradient-2) 60%, var(--color-gradient-3) 100%),
+    url("./people-at-concert-1105666(1).jpg") no-repeat center 10vh;
+    background-size: cover;
+    color: var(--color-light);
+}
+
+body > * {
+    padding: 0 2rem;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+input {
+    background-color: var(--color-bg-input);
+    border: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-dark);
+    color: #FFF;
+    align-items: baseline;
+}
+
+.header__logo {
+    font-size: 1rem;
+    padding: .5em 0;
+    margin: 0;
+    font-family: 'Racing Sans One', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__item {
+    padding: 1em 2em;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.menu__item:last-child {
+    padding-right: 0;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10vh 2rem;
+}
+
+.main {
+    flex: 1;
+    margin-right: 10%;    
+    min-width: 28rem;
+    max-width: 50%;
+}
+
+.main__title {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.main__title--important {
+    font-family: 'Racing Sans One', Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-left: auto;
+    font-style: normal;
+}
+
+.main__text {
+    text-align: justify;
+}
+
+.main__link {
+    color: var(--color-important);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-dark);
+    padding: 2em;
+    min-width: 25rem;
+    border-radius: 16px;
+    color: var(--color-light)
+}
+
+.form__top, .form__bottom {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+}
+
+.form__label {
+    margin: 1em 0;
+}
+
+.form__label:first-child {
+    margin-top: 0;
+}
+
+.form__input {
+    font-size: 1rem;
+    padding: .5em;
+}
+
+.form__submit {
+    margin: 2em 0 0 0;
+    font-size: 1.2rem;
+    padding: .5em 1em;
+    background-color: var(--color-important);
+    font-weight: 900;
+    color: var(--color-dark);
+}
+
+.footer {
+    background-color: var(--color-dark);
+    text-align: right;
+}
+
+.footer__icon {
+    height: 2rem;
+    margin: 1em;
+    filter: invert(100%);
+}

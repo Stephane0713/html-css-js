@@ -1,0 +1,74 @@
+ul {
+    position: relative;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+    width: 25%;
+}
+
+a {
+    display: inline-block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+
+a:hover {
+    background-color: rgb(100, 100, 200);
+    color: white;
+}
+
+a:focus {
+    background-color: rgb(50, 50, 200);
+    color: white;
+}
+
+.under {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 0;
+    width: 25%;
+    border-bottom: 4px solid rgb(10, 99, 200);
+    transition: left .2s ease-in-out;
+}
+
+li:nth-child(1):focus-within ~ .under {
+    left: 0;
+}
+
+li:nth-child(2):focus-within ~ .under {
+    left: 25%;
+}
+
+li:nth-child(3):focus-within ~ .under {
+    left: 50%;
+}
+
+li:nth-child(4):focus-within ~ .under {
+    left: 75%;
+}
+
+li:nth-child(1):hover ~ .under {
+    left: 0;
+}
+
+li:nth-child(2):hover ~ .under {
+    left: 25%;
+}
+
+li:nth-child(3):hover ~ .under {
+    left: 50%;
+}
+
+li:nth-child(4):hover ~ .under {
+    left: 75%;
+}

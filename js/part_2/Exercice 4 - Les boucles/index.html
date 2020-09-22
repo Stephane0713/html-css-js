@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getUserInput() {
+            let nbr
+            while (!(/^[0-9]+$/.test(nbr))) {
+                nbr = prompt("nbr : ")
+            }
+            nbr = parseInt(nbr, 10)
+            return nbr
+        }
+
+        let n = getUserInput()
+        document.open()
+        for (let i = 1; i <= n; i++) {
+            document.write("<h3>Table de " + i + "</h3>")
+            for (let j = 1; j <= 10; j++) {
+                document.write("<div>" + i + " x " + j + " = " + j * i + "</div>")
+            }
+        }
+        document.close()
+
+    </script>
+</body>
+
+</html>

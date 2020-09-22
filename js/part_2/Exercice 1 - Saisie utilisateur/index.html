@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="b1">Click me!</button>
+    <button id="b2">Click me!</button>
+    <script>
+        const BTN1 = document.querySelector("#b1")
+        BTN1.addEventListener("click", () => {
+            console.log("Hello world")
+        })
+
+        const BTN2 = document.querySelector("#b2")
+        BTN2.addEventListener("click", () => {
+            let name = prompt("Quel est votre nom ?")
+            let isTrue = confirm("Est ce que " + name + " est vraiment votre nom ?")
+            if (isTrue) {
+                alert("Bonjour " + name)
+            }
+        })
+    </script>
+</body>
+
+</html>

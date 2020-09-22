@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="addSomeone(people, stock)">Ajouter</button>
+    <button onclick="chooseSomeone(people)">Lancer !</button>
+    <div class="list"></div>
+
+    <script>
+        let stock = document.querySelector(".list")
+        let people = []
+
+        function addSomeone(list, stock) {
+            let name = prompt("Nom : ")
+            if (name !== null) {
+                list.push(name)
+                stock.innerHTML += "<div>" + name + "</div>"
+            }
+        }
+
+        function chooseSomeone(list) {
+            let index = Math.floor(Math.random() * list.length)
+            console.log(index)
+            alert("Le gagnant est : " + list[index])
+        }
+
+    </script>
+</body>
+
+</html>

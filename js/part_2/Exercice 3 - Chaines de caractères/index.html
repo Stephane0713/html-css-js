@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bloc {
+            width: 400px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bloc">
+        <div class="elts">
+            <p>
+                <input type="text">
+            </p>
+            <p>
+                <button id="btn1">Tester</button>
+            </p>
+            <p class="result">Waiting...</p>
+        </div>
+    </div>
+
+    <div class="bloc">
+        <div class="elts">
+            <p>
+                <input type="text">
+            </p>
+            <p>
+                <button id="btn1">Tester</button>
+            </p>
+            <p class="result">Waiting...</p>
+        </div>
+    </div>
+
+    <div class="bloc">
+        <div class="elts">
+            <p>
+                <input type="text">
+            </p>
+            <p>
+                <button id="btn1">Tester</button>
+            </p>
+            <p class="result">Waiting...</p>
+        </div>
+    </div>
+
+    <div class="bloc">
+        <div class="elts">
+            <p>
+                <input type="text">
+            </p>
+            <p>
+                <button id="btn1">Tester</button>
+            </p>
+            <p class="result">Waiting...</p>
+        </div>
+    </div>
+    <script>
+        //INIT
+
+        const INPUT = document.querySelectorAll("input")
+        const BTN = document.querySelectorAll("button")
+        const RESULT = document.querySelectorAll(".result")
+
+        for (let i = 0; i < BTN.length; i++) {
+            let span = document.createElement("span")
+            INPUT[i].parentNode.appendChild(span)
+            BTN[i].addEventListener("click", () => {
+                span.textContent = INPUT[i].value
+                INPUT[i].style.display = "none"
+            })
+        }
+
+        const SPAN = document.querySelectorAll("span")
+
+        function isTrue(regex, str) {
+            return regex.test(str)
+        }
+
+        function hideNbr(str) {
+            const REGX = RegExp('[0-9]')
+            let hidden = ""
+            for (ltr of str) {
+                if (REGX.test(ltr)) {
+                    hidden += "*"
+                } else {
+                    hidden += ltr
+                }
+            }
+            return hidden
+        }
+
+        //Bloc 1
+        BTN[0].addEventListener("click", () => {
+            const REG0 = RegExp('^[ABCDabcd]')
+            RESULT[0].textContent = isTrue(REG0, INPUT[0].value)
+        })
+
+        //Bloc 2
+        BTN[1].addEventListener("click", () => {
+            const REG1 = RegExp('^[^@]*@[^@]*$')
+            RESULT[1].textContent = isTrue(REG1, INPUT[1].value)
+        })
+
+        //Bloc 3
+        BTN[2].addEventListener("click", () => {
+            const REG2 = RegExp('.*[0-9]+.*')
+            RESULT[2].textContent = isTrue(REG2, INPUT[2].value)
+        })
+
+        //Bloc 4
+        BTN[3].addEventListener("click", () => {
+            RESULT[3].textContent = hideNbr(INPUT[3].value)
+        })
+
+    </script>
+
+</body>
+
+</html>

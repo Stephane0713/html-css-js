@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 8</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body class="m-2">
+    <div class="container">
+        <!--Première partie-->
+        <div class="row">
+            <div class="col-4">
+                <a class="btn btn-primary col-12" data-toggle="collapse" href="#collapse-1" role="button"
+                    aria-expanded="false" aria-controls="collapse-1">Button</a>
+                <div class="collapse" id="collapse-1">
+                    <div class="card card-body">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quis!
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <a class="btn btn-primary col-12" data-toggle="collapse" href="#collapse-2" role="button"
+                    aria-expanded="false" aria-controls="collapse-2">Button</a>
+                <div class="collapse" id="collapse-2">
+                    <div class="card card-body">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quis!
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <a class="btn btn-primary col-12" data-toggle="collapse" href="#collapse-3" role="button"
+                    aria-expanded="false" aria-controls="collapse-3">Button</a>
+                <div class="collapse" id="collapse-3">
+                    <div class="card card-body">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quis!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Second partie-->
+        <div class="row">
+            <div class="col-12 my-2">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="header-1">
+                            <h5>
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#accordion-1"
+                                    aria-expanded="true" aria-controls="accordion-1">button</button>
+                            </h5>
+                        </div>
+                        <div id="accordion-1" class="collapse show" aria-labelledby="header-1" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                                    quae
+                                    suscipit asperiores adipisci voluptas consequuntur vel, ipsam veritatis earum
+                                    maiores
+                                    non ullam neque deleniti corrupti in rerum dolore quisquam saepe fuga cum esse
+                                    corporis
+                                    a totam? Vero nihil ratione doloremque!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="header-2">
+                            <h5>
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#accordion-2"
+                                    aria-expanded="true" aria-controls="accordion-2">button</button>
+                            </h5>
+                        </div>
+                        <div id="accordion-2" class="collapse" aria-labelledby="header-1" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                                    quae
+                                    suscipit asperiores adipisci voluptas consequuntur vel, ipsam veritatis earum
+                                    maiores
+                                    non ullam neque deleniti corrupti in rerum dolore quisquam saepe fuga cum esse
+                                    corporis
+                                    a totam? Vero nihil ratione doloremque!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="header-3">
+                            <h5>
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#accordion-3"
+                                    aria-expanded="true" aria-controls="accordion-3">button</button>
+                            </h5>
+                        </div>
+                        <div id="accordion-3" class="collapse" aria-labelledby="header-3" data-parent="#accordion">
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                                    quae
+                                    suscipit asperiores adipisci voluptas consequuntur vel, ipsam veritatis earum
+                                    maiores
+                                    non ullam neque deleniti corrupti in rerum dolore quisquam saepe fuga cum esse
+                                    corporis
+                                    a totam? Vero nihil ratione doloremque!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Troisième partie-->
+        <div id="s_collapse">
+            <div class="row">
+                <div class="col-4">
+                    <a class="btn btn-primary col-12" data-toggle="collapse" href="#s_collapse-1" role="button"
+                        aria-expanded="false" aria-controls="s_collapse-1">Button</a>
+                    <div class="collapse" id="s_collapse-1" data-parent="#s_collapse">
+                        <div class="card card-body">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quis!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <a class="btn btn-primary col-12" data-toggle="collapse" href="#s_collapse-2" role="button"
+                        aria-expanded="false" aria-controls="s_collapse-2">Button</a>
+                    <div class="collapse" id="s_collapse-2" data-parent="#s_collapse">
+                        <div class="card card-body">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quis!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <a class="btn btn-primary col-12" data-toggle="collapse" href="#s_collapse-3" role="button"
+                        aria-expanded="false" aria-controls="s_collapse-3">Button</a>
+                    <div class="collapse" id="s_collapse-3" data-parent="#s_collapse">
+                        <div class="card card-body">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, quis!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

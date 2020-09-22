@@ -1,0 +1,53 @@
+li {
+    list-style: none;
+    text-transform: capitalize;
+}
+
+li::before {
+    display: inline-block;
+}
+
+.list1 li::before {
+    content:"";
+    position: relative;
+    left: -1em;
+    bottom: 50%;
+    width: 0;
+    height: 0;
+    border-left: .4em solid #000;
+    border-bottom: .3em solid transparent;
+    border-top: .3em solid transparent;
+}
+
+.list2 li::before {
+    content:"";
+    position: relative;
+    left: -1em;
+    bottom: 50%;
+    transform: rotateZ(45deg);
+    width: .25em;
+    height: .25em;
+    border: 2px solid blue;
+}
+
+.list3 {
+    counter-reset: num;
+    line-height: 1.5;
+}
+
+.list3 li::before {
+    width: 1rem;
+    height: 1rem;
+    line-height: 1;
+    font-weight: 900;
+    padding: .1em;
+    color: #fff;
+    text-align: center;
+    background-color: blue;
+    border-radius: 50%;
+    counter-increment: num;
+    content: counter(num);
+    position: relative;
+    left: -1em;
+    bottom: 50%;
+}
